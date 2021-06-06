@@ -56,7 +56,19 @@ class _HomePageState extends State<HomePage> {
                 Icons.notifications,
                 color: Colors.purple[200],
               ),
-              onPressed: () {}),
+              onPressed: () {
+                showModalBottomSheet(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return Column(
+                        children: [
+                          duyuru("Bedirhan seni takip etti", "3 dk önce"),
+                          duyuru(
+                              "Özge bir fotoğrafını beğendi.", "1 saat önce"),
+                        ],
+                      );
+                    });
+              }),
         ],
       ),
       body: ListView(
@@ -127,6 +139,27 @@ class _HomePageState extends State<HomePage> {
             passingTime: "2 saat önce",
             explanation: "Sevimli Kedi",
           ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.purple[300],
+        child: Icon(
+          Icons.add_a_photo,
+          color: Colors.white,
+        ),
+      ),
+    );
+  }
+
+  Padding duyuru(String message, String duration) {
+    return Padding(
+      padding: const EdgeInsets.all(12.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(message, style: TextStyle(fontSize: 15.0)),
+          Text(duration),
         ],
       ),
     );
