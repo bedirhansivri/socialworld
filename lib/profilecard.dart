@@ -42,7 +42,7 @@ class ProfileCard extends StatelessWidget {
                 left: 20,
                 bottom: 0,
                 child: Hero(
-                  tag: "UcanProfilResmi",
+                  tag: isimSoyad,
                   child: Container(
                     width: 120.0,
                     height: 120.0,

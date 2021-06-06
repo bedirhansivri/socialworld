@@ -156,7 +156,7 @@ class _HomePageState extends State<HomePage> {
                 alignment: AlignmentDirectional.topEnd,
                 children: [
                   Hero(
-                    tag: "UcanProfilResmi",
+                    tag: userName,
                     child: Container(
                       width: 70,
                       height: 70,
